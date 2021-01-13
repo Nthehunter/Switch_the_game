@@ -1,0 +1,34 @@
+#imgs1 {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin: auto;
+}
+
+#imgs2 {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin: auto;
+    margin-left: 0px;
+    
+}
+
+#imgs3 {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin: auto;
+    margin-left: 0px;
+    
+}
+
+#center{
+    text-align: center;
+
+  }
+
+#center_2{
+    text-align: center;
+
+  }

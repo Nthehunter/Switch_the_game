@@ -1,0 +1,23 @@
+.button-container{
+    position: fixed; 
+    top: 2em; 
+    right: 2em;
+    width: 3em;
+    height: 3em;
+    text-align: center; 
+    z-index: 1;
+}
+
+#speaker-button {
+    border-radius: 5px;
+}
+
+#speaker-img { 
+    width: 100%; 
+    height: auto;
+}
+
+#number {
+    font-size:50px;
+    color:#434343;
+  }

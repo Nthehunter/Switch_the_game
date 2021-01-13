@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<<<<<<< HEAD
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrarse</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <link rel="icon" href="img/ico.ico" type="image/png" />
+  <LINK REL=StyleSheet HREF="css/register.css" TYPE="text/css">
+
+=======
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="icon" href="img/ico.ico" type="image/png" />
+    <LINK REL=StyleSheet HREF="css/register.css" TYPE="text/css">
+>>>>>>> 44e1252ccb4becf5fb0ed175208050f1c394fc54
+
+</head>
+
+<body style="background-color:rgb(118, 7, 182)">
+
+<<<<<<< HEAD
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html"><img src="img/star.gif" alt="Logo" style="width:40px;"></a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navb">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="videogames.html">Juegos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="register.html">Registrarse</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            Contacto
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="who_we_are.html">¿Quienes somos?</a>
+            <a class="dropdown-item" href="localitation.html">Localización</a>
+            <a class="dropdown-item" href="important_information.html">Información importante</a>
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-success my-2 my-sm-0" type="button">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <br> <br>
+
+  <div class="container-fluid">
+    <h1 style="color: antiquewhite;"> Registro de usuarios</h1>
+
+    <div class="row">
+      <div class="col-sm-3"> </div>
+      <div class="col-sm-6">
+        <form id="form" action="" method="POST">
+          <div class="form">
+            <label for="user" style="color: beige;">Nombre de usuario:</label>
+            <input id="user" type="text" class="form-control" placeholder="User" value="">
+          </div>
+          <div class="form">
+            <label for="email" style="color: beige;">Dirección de correo:</label>
+            <input type="email" class="form-control" placeholder="Enter email" id="email">
+          </div>
+          <div class="form">
+            <label for="pwd" style="color: beige;">Contraseña:</label>
+            <input type="password" class="form-control" placeholder="Enter password" id="pwd">
+          </div>
+          <div class="form">
+            <label for="pwd_cp" style="color: beige;">Repite la contraseña:</label>
+            <input type="password" class="form-control" placeholder="Enter password" id="pwd_cp">
+          </div>
+          <div class="form">
+            <label for="tlf" style="color: beige;">Teléfono:</label>
+            <input type="number" class="form-control" placeholder="Teléfono">
+          </div>
+
+          <div class="form" style="color: beige;">
+            <label for="sel1">Provincia: </label>
+            <select class="form-control" id="sel1">
+              <option>Las palmas</option>
+              <option> Burgos </option>
+              <option>Huelva </option>
+              <option>Albacete</option>
+            </select>
+          </div>
+          <div id="center">
+            <div class="form-check">
+              <label class="form-check-label" style="color: beige;">
+                <input type="checkbox" class="form-check-input" value=""> Estoy de acuerdo con el contrato de
+                uso.
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label" style="color: beige;">
+                <input type="checkbox" class="form-check-input" value=""> Deseo recibir noticias de STG.
+              </label>
+            </div>
+            <br>
+            <p style="color: beige;"> Desea suscribirse al boletín de noticias: </p>
+            <input type="radio" id="Yes" name="selection" value="Yes">
+            <label for="Yes" style="color: beige;">Si</label><br>
+            <input type="radio" id="No" name="selection" value="No">
+            <label for="No" style="color: beige;">No</label><br>
+
+            <br>
+            <button type="submit">Enviar</button>
+            <br>
+            <br>
+            <input type="reset" value="Reset">
+            <br>
+            <p class="warnings" id="warnings"> </p>
+          </div>
+        </form>
+        <br>
+      </div>
+      <div class="col-sm-3"> </div>
+    </div>
+
+  </div>
+  <script src="js/register.js"></script>
+=======
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html"><img src="img/star.gif" alt="Logo" style="width:40px;"></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navb">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="videogames.html">Juegos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="register.html">Registrarse</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Contacto
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="who_we_are.html">¿Quienes somos?</a>
+                <a class="dropdown-item" href="localitation.html">Localización</a>
+                <a class="dropdown-item" href="important_information.html">Información importante</a>
+              </div>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-success my-2 my-sm-0" type="button">Search</button>
+          </form>
+        </div>
+      </nav>
+
+    <br> <br>
+    <div id="center_1">
+        <h1 style="color: antiquewhite;"> Registro de usuarios</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3"> </div>
+        <div class="col-sm-6">
+            <form action="/action_page.php">
+                <div class="form-group">
+                    <label for="email" style="color: beige;">Nombre de usuario:</label>
+                    <input id="email" type="email" class="form-control" placeholder="User name">
+                </div>
+                <div class="form-group">
+                    <label for="email" style="color: beige;">Dirección de correo:</label>
+                    <input type="email" class="form-control" placeholder="Enter email" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="pwd" style="color: beige;">Contraseña:</label>
+                    <input type="password" class="form-control" placeholder="Enter password" id="pwd">
+                </div>
+                <div class="form-group">
+                    <label for="pwd_cp" style="color: beige;">Repite la contraseña:</label>
+                    <input type="password" class="form-control" placeholder="Enter password" id="pwd_cp">
+                </div>
+                <div class="form-group">
+                    <label for="email" style="color: beige;">Teléfono:</label>
+                    <input type="email" class="form-control" placeholder="Teléfono">
+                </div>
+
+                <div class="form-group" style="color: beige;">
+                    <label for="sel1">Provincia: </label>
+                    <select class="form-control" id="sel1">
+                        <option>Las palmas</option>
+                        <option> Burgos </option>
+                        <option>Huelva </option>
+                        <option>Albacete</option>
+                    </select>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label" style="color: beige;">
+                        <input type="checkbox" class="form-check-input" value=""> Estoy de acuerdo con el contrato de
+                        uso.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label" style="color: beige;">
+                        <input type="checkbox" class="form-check-input" value=""> Deseo recibir noticias de STG.
+                    </label>
+                </div>
+                <br>
+                <p style="color: beige;"> Desea suscribirse al boletín de noticias: </p>
+                <input type="radio" id="Yes" name="selection" value="Yes">
+                <label for="Yes" style="color: beige;">Si</label><br>
+                <input type="radio" id="No" name="selection" value="No">
+                <label for="No" style="color: beige;">No</label><br>
+
+                <br>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+                <br>
+                <br>
+                <input type="reset" value="Reset">
+                <br>
+            </form>
+            <br>
+        </div>
+    </div>
+
+>>>>>>> 44e1252ccb4becf5fb0ed175208050f1c394fc54
+</body>
+
+</html>
