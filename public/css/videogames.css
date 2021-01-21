@@ -7,6 +7,11 @@
     height: auto;
   }
 
+.del_img{
+  width: 10%;
+  height: 10%;
+}
+
   .container-fluid{
     background-color: darkslateblue;
     

@@ -126,6 +126,8 @@ function initialize() {
         ref_Ads.on("value", function(snap){
             var datos = snap.val();
             var divs = "";
+            trade.innerHTML = divs;
+            on_sale.innerHTML = divs;
 
             for(var key in datos){
 
@@ -133,7 +135,7 @@ function initialize() {
 
                 console.log(datos[key].Category)
 
-                divs += "<div class='container-fluid'>" + "<h2> Nombre de usuario: " + datos[key].User_name + "</h2>" + "<br>" + "<h3>" + datos[key].Comment + "</h3>" + "<br><br><br>" + "</div>" ;
+                divs += "<div class='container-fluid'>" + "<h2> Nombre de usuario: " + datos[key].User_name + "</h2>" + "<br>" + "<h3>" + datos[key].Comment + "</h3>" + "<br>"+ "<button class='btn btn-danger delete' data-ad='" + key + "'> <p> remove </p> </button>" + "<br><br>" + "</div>" ;
 
                 if(datos[key].Category == "Intercambio"){
                     trade.innerHTML += divs;
@@ -143,24 +145,27 @@ function initialize() {
                     on_sale.innerHTML += divs;
                 }
             }
+
+            if(divs != ""){
+
+                var borrar = document.getElementsByClassName("delete");
+                for(var i = 0; i < borrar.length; i++){
+
+                    borrar[i].addEventListener("click", borrarAds, false);
+
+                }
+            }
         })
     }
 
+    function borrarAds(){
+        var keyAdDelete = this.getAttribute("data-ad");
+        var refAdD = ref_Ads.child(keyAdDelete);
+        
+        refAdD.remove();
+    }
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
