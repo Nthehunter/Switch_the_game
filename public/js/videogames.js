@@ -64,6 +64,7 @@ function initialize() {
 
         if (!notSend) {
             addToFirebase();
+            alert("Anuncio publicado!.")
         }
     })
 
@@ -161,7 +162,7 @@ function initialize() {
     function borrarAds(){
         var keyAdDelete = this.getAttribute("data-ad");
         var refAdD = ref_Ads.child(keyAdDelete);
-        
+
         refAdD.remove();
     }
 

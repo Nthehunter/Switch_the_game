@@ -102,6 +102,7 @@ function initialize() {
 
         if (!notSend) {
             addToFirebase();
+            alert("Usuario creado!.")
         }
 
 
