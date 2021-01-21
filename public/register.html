@@ -18,13 +18,38 @@
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-database.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAC3gyk4RHGJcu8F-SQAnINjK5S3Cb6vUU",
+      authDomain: "switchthegame-1.firebaseapp.com",
+      databaseURL: "https://switchthegame-1-default-rtdb.firebaseio.com",
+      projectId: "switchthegame-1",
+      storageBucket: "switchthegame-1.appspot.com",
+      messagingSenderId: "145978562415",
+      appId: "1:145978562415:web:b58aaa0ef2e7addad33a9a"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+
   <link rel="icon" href="img/ico.ico" type="image/png" />
   <LINK REL=StyleSheet HREF="css/register.css" TYPE="text/css">
   <script src="js/register.js"></script>
 
 </head>
 
-<body style="background-color:rgb(118, 7, 182)">
+<body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="index.html"><img src="img/star.gif" alt="Logo" style="width:40px;"></a>
@@ -64,60 +89,75 @@
   <br> <br>
 
   <div class="container-fluid">
-    <h1 style="color: antiquewhite;"> Registro de usuarios</h1>
+    <h1> Registro de usuarios</h1>
 
     <div class="row">
       <div class="col-sm-3"> </div>
       <div class="col-sm-6">
         <form id="form" action="" method="POST">
           <div class="form">
-            <label for="user" style="color: beige;">Nombre de usuario:</label>
+            <label for="user">Nombre de usuario:</label>
             <input id="user" type="text" class="form-control" placeholder="User" value="">
+            <div id="info"> (No será válido si ya existe o es menor de 5 carácteres.) </div>
+            <div id="error-user"> *El nombre de usuario no es válido. </div>
           </div>
           <div class="form">
-            <label for="email" style="color: beige;">Dirección de correo:</label>
+            <label for="email">Dirección de correo:</label>
             <input type="email" class="form-control" placeholder="Enter email" id="email">
+            <div id="error-email"> *El email no es válido ("No se puede usar un email que ya use otro usuario. "). </div>
           </div>
           <div class="form">
-            <label for="pwd" style="color: beige;">Contraseña:</label>
+            <label for="pwd">Contraseña:</label>
             <input type="password" class="form-control" placeholder="Enter password" id="pwd">
+            <div id="info"> La contraseña debe ser mayor de 8 carácteres. </div>
+            <div id="error-password"> *La contraseña no es válida. </div>
           </div>
           <div class="form">
-            <label for="pwd_cp" style="color: beige;">Repite la contraseña:</label>
+            <label for="pwd_cp">Repite la contraseña:</label>
             <input type="password" class="form-control" placeholder="Enter password" id="pwd_cp">
+            <div id="info"> La contraseña debe ser igual a la anterior. </div>
+            <div id="error-passwordCP"> *Las contraseñas no coinciden. </div>
           </div>
           <div class="form">
-            <label for="tlf" style="color: beige;">Teléfono:</label>
-            <input type="number" class="form-control" placeholder="Teléfono">
+            <label for="tlf">Teléfono:</label>
+            <input type="number" class="form-control" placeholder="Teléfono" id="tlf">
+            <div id="info"> Introduce tu número de telefono sin "+34" ni que sea mayor de 8 números. </div>
+            <div id="error-tlf"> *Este campo es obligatorio ("El número de telefono no debe haberse registrado antes."). </div>
           </div>
 
-          <div class="form" style="color: beige;">
-            <label for="sel1">Provincia: </label>
-            <select class="form-control" id="sel1">
+          <div class="form">
+            <label for="sel">Provincia: </label>
+            <select class="form-control" id="sel">
+              <option> Selecciona una provincia </option>
               <option>Las palmas</option>
               <option> Burgos </option>
               <option>Huelva </option>
               <option>Albacete</option>
             </select>
+            <div id="error-prv"> *Este campo es obligatorio. </div>
           </div>
+
           <div id="center">
             <div class="form-check">
-              <label class="form-check-label" style="color: beige;">
-                <input type="checkbox" class="form-check-input" value=""> Estoy de acuerdo con el contrato de
-                uso.
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="terms" value="check"> Estoy de acuerdo con el
+                contrato de uso.
               </label>
+              <div id="error-terms"> *Este campo es obligatorio. </div>
             </div>
             <div class="form-check">
-              <label class="form-check-label" style="color: beige;">
-                <input type="checkbox" class="form-check-input" value=""> Deseo recibir noticias de STG.
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input"> Deseo recibir noticias de STG.
               </label>
             </div>
             <br>
-            <p style="color: beige;"> Desea suscribirse al boletín de noticias: </p>
+            <p> ¿Te gustan los videojuegos?: </p>
             <input type="radio" id="Yes" name="selection" value="Yes">
-            <label for="Yes" style="color: beige;">Si</label><br>
-            <input type="radio" id="No" name="selection" value="No">
-            <label for="No" style="color: beige;">No</label><br>
+            <label for="Yes">Si</label><br>
+            <input type="radio" id="Yes_but" name="selection" value="Yes_but">
+            <label for="Yes_but" id="label_but">Si, pero en otro color. </label><br>
+
+            <div id="error-radio"> *Este campo es obligatorio. </div>
 
             <br>
             <button type="submit">Enviar</button>
@@ -125,7 +165,6 @@
             <br>
             <input type="reset" value="Reset">
             <br>
-            <p class="warnings" id="warnings"> </p>
           </div>
         </form>
         <br>

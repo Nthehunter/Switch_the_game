@@ -32,3 +32,44 @@
     text-align: center;
 
   }
+
+  body{
+  background-color:darkslateblue
+  }
+
+  .jumbotron-fluid{
+      background-color: darkslateblue;
+  }
+
+  .container-fluid{
+    background-color: darkslateblue;
+  }
+
+  h2{
+    color:whitesmoke; 
+    text-align: center;
+  }
+
+  #secret{
+    background-color: darkslateblue;
+    color: darkslateblue;
+}
+
+h4{
+    color: antiquewhite;
+}
+
+h1{
+    color: antiquewhite;
+}
+
+h5{
+    color: antiquewhite; text-align: justify;
+}
+
+.row{
+    background-color: darkslateblue;
+}
+
+
+

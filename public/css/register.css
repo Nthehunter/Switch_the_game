@@ -13,3 +13,67 @@ div{
     color: #000000;
     padding-top: 20px;
 }
+
+body{
+    background-color:darkslategray
+}
+
+#error-user{
+    display: none;
+    color: red;
+}
+
+#error-email{
+    display: none;
+    color: red;
+}
+
+#error-password{
+    display: none;
+    color: red;
+}
+
+#error-passwordCP{
+    display: none;
+    color: red;
+}
+
+#error-tlf{
+    display: none;
+    color: red;
+}
+
+#error-prv{
+    display: none;
+    color: red;
+}
+
+#error-terms{
+    display: none;
+    color: red;
+}
+
+p{
+    color: beige;
+}
+
+div{
+    color: beige;
+}
+
+label{
+    color: beige;
+}
+
+h1{
+    color: beige;
+}
+
+#label_but{
+    color: navy;
+}
+
+#error-radio{
+    display: none;
+    color: red;
+}

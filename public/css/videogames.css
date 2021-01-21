@@ -4,5 +4,84 @@
 
 .carousel-inner img {
     width: 100%;
-    height: 100%;
+    height: auto;
   }
+
+  .container-fluid{
+    background-color: darkslateblue;
+    
+  }
+
+  .carouserl.slide{
+    width: auto;
+    height: auto;
+    
+  }
+
+  
+.row{
+  background-color: darkslateblue;
+}
+
+.col{
+  color: antiquewhite;
+  background-color: darkslateblue;
+}
+
+body{
+  background-color:darkslateblue
+}
+
+h3{
+  color: darkturquoise; text-align: center;
+}
+
+h2{
+  color: rgb(32, 206, 133); text-align: center;
+}
+
+h6{
+  color: darkturquoise; text-align: center;
+}
+
+
+h5{
+  color: antiquewhite; text-align: center;
+}
+
+label{
+  color: beige;
+}
+
+h1{
+  color: beige;
+}
+
+#error-user{
+  display: none;
+  color: red;
+}
+
+.jumbotron-fluid{
+  background-color: darkslateblue;
+}
+
+.container-fluid{
+background-color: darkslateblue;
+}
+
+#error-password{
+  display: none;
+  color: red;
+}
+
+#error-sel{
+  display: none;
+  color: red;
+}
+
+
+#error-comment{
+  display: none;
+  color: red;
+}

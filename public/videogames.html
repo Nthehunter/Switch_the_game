@@ -18,13 +18,39 @@
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-database.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+
+
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAC3gyk4RHGJcu8F-SQAnINjK5S3Cb6vUU",
+      authDomain: "switchthegame-1.firebaseapp.com",
+      databaseURL: "https://switchthegame-1-default-rtdb.firebaseio.com",
+      projectId: "switchthegame-1",
+      storageBucket: "switchthegame-1.appspot.com",
+      messagingSenderId: "145978562415",
+      appId: "1:145978562415:web:b58aaa0ef2e7addad33a9a"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
   <LINK REL=StyleSheet HREF="css/videogames.css" TYPE="text/css">
+
+  <script src="js/videogames.js"></script>
   <link rel="icon" href="img/ico.ico" type="image/png" />
 
 
 </head>
 
-<body style="background-color: darkslateblue;">
+<body>
 
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -135,37 +161,77 @@
 
 
 
-  <div class="jumbotron jumbotron-fluid" style="background-color: darkslateblue;">
-    <div class="container-fluid" style="background-color:darkslateblue">
-
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container-fluid">
       <div id="center_1">
-        <h1 style="color: antiquewhite;">Juegos disponibles</h1>
+        <h1>Juegos disponibles</h1>
         <br> <br>
-        <div class="row" style="background-color:darkslateblue">
-          <div class="col" style="color: antiquewhite;">
+        <div class="row">
+          <div class="col-sm-6">
             <!-- Aquí debería ir los datos de los usuarios que suban cosas para vender -->
+
             <h1> A la venta</h1> <img src="img/rupia.gif" style="width: 150px; height: 150px;" alt="rupia">
             <br> <br>
-            <h3> Usuario: Paco Roque </h3>
-            <br>
-            <h4>Vendo Xenoblade Chronicles NSW, por 30€.</h4>
-            <h5>Contacto: Telf: 63738924 Gmail: lolazo@yopmail.com</h5>
+            <div id="trade">
+
+            </div>
           </div>
-          <div class="col" style="color: antiquewhite;">
+
+          <div class="col-sm-6">
             <!-- Aquí debería ir los datos de los usuarios que suban cosas para intercambiar -->
             <h1>Intercambiables</h1><img src="img/block.gif" style="width: 150px; height: 150px; " alt="ruipia">
             <br> <br>
-            <h3> Usuario: Yassir Curbelo </h3>
-            <br>
-            <h4>Hace días me termine el terraria para ps3, lo cambio por el minecraft de ps3.</h4>
-            <h5>Contacto: Telf: 63799924 Gmail: jasir@yopmail.com</h5>
+            <div id="on_sale">
+
+            </div>
+
           </div>
           <br> <br>
 
         </div>
+
+        <br> <br> <br>
+        <h1> Publica tu anuncio!.</h1>
+
+        <div class="row">
+          <div class="col-sm-3"> </div>
+          <div class="col-sm-6">
+            <form id="form_videogames" action="" method="POST">
+              <div class="form">
+                <label for="user">Nombre de usuario:</label>
+                <input id="user" type="text" class="form-control" placeholder="User" value="">
+                <div id="error-user"> *El nombre de usuario no es válido. </div>
+
+              </div>
+              <div class="form">
+                <label for="pwd">Contraseña:</label>
+                <input type="password" class="form-control" placeholder="Enter password" id="pwd">
+                <div id="error-password"> *La contraseña no es válida. </div>
+              </div>
+              <div class="form">
+                <label for="sel">Tipo de anuncio: </label>
+                <select class="form-control" id="sel">
+                  <option> Selecciona una categoría </option>
+                  <option>Intercambio </option>
+                  <option> Venta </option>
+                </select>
+                <div id="error-sel"> *Este campo es obligatorio. </div>
+              </div>
+              <br>
+              <div class="form-group">
+                <label for="comment">Descripción de la venta (juego, intereses, contacto...):</label>
+                <textarea class="form-control" rows="5" id="comment"></textarea>
+                <div id="error-comment"> *Este campo es obligatorio y debes de escribir más de 25 carácteres. </div>
+              </div>
+              <br>
+              <button type="submit">Enviar</button>
+              <br>
+            </form>
+          </div>
+          <div class="col-sm-3"> </div>
+        </div>
       </div>
     </div>
-  </div>
 </body>
 
 </html>
