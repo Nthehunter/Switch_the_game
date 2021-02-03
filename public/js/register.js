@@ -102,7 +102,16 @@ function initialize() {
 
         if (!notSend) {
             addToFirebase();
-            alert("Usuario creado!.")
+            firebase.auth().createUserWithEmailAndPassword(email.value, password.value)
+            .then((user) => {
+              // Signed in
+              // ...
+            })
+            .catch((error) => {
+              var errorCode = error.code;
+              var errorMessage = error.message;
+              // ..
+            });
         }
 
 

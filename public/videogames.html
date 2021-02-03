@@ -22,6 +22,7 @@
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script>
 
   <!-- TODO: Add SDKs for Firebase products that you want to use
       https://firebase.google.com/docs/web/setup#available-libraries -->
@@ -80,6 +81,11 @@
             <a class="dropdown-item" href="localitation.html">Localización</a>
             <a class="dropdown-item" href="important_information.html">Información importante</a>
           </div>
+
+          <li class="nav-item">
+            <a  class="nav-link" href="xml/rss.xml" ><img id="rss" src="img/rss.png" alt="rss"></a>
+          </li>
+          
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
@@ -88,6 +94,7 @@
       </form>
     </div>
   </nav>
+
 
   <div class="container-fluid">
 
@@ -171,7 +178,7 @@
           <div class="col-sm-6">
             <!-- Aquí debería ir los datos de los usuarios que suban cosas para vender -->
 
-            <h1> A la venta</h1> <img src="img/rupia.gif" style="width: 150px; height: 150px;" alt="rupia">
+            <h1> A la venta</h1> <img id="rupia" src="img/rupia.gif"  alt="rupia">
             <br> <br>
             <div id="on_sale">
 
@@ -180,7 +187,7 @@
 
           <div class="col-sm-6">
             <!-- Aquí debería ir los datos de los usuarios que suban cosas para intercambiar -->
-            <h1>Intercambiables</h1><img src="img/block.gif" style="width: 150px; height: 150px; " alt="ruipia">
+            <h1>Intercambiables</h1><img id="block" src="img/block.gif"  alt="ruipia">
             <br> <br>
             <div id="trade">
 
@@ -225,9 +232,18 @@
                 <div id="error-comment"> *Este campo es obligatorio y debes de escribir más de 25 carácteres. </div>
               </div>
               <br>
+              <div class="btn btn-file">
+                <label for="img">Sube una imágen del juego: </label>
+                <input type="file" class="form-control" value="" id="img">
+                <div id="error-img"> *Introduce una imágen. </div>
+              </div>
+              <br>
+              <br>
               <button type="submit">Enviar</button>
               <br>
             </form>
+            <br> <br> 
+            <div id="add-check"> <h3> Se ha subido el anuncio!.</h3>  </div>
           </div>
           <div class="col-sm-3"> </div>
         </div>

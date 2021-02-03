@@ -90,3 +90,28 @@ background-color: darkslateblue;
   display: none;
   color: red;
 }
+
+#error-img{
+  display: none;
+  color: red;
+}
+
+#rss{
+  width: 30px;
+  height: 30px;
+}
+
+#rupia{
+  width: 150px;
+  height: 150px;
+}
+
+#bloque{
+  width: 150px;
+  height: 150px;
+}
+
+#add-check{
+  display: none;
+  color: rgb(20, 149, 255);
+}

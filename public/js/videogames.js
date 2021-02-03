@@ -15,6 +15,10 @@ function initialize() {
 
     const form = document.getElementById("form_videogames")
 
+    const img = document.getElementById("img")
+    var imgURL = ""
+    storageRef = firebase.storage().ref();
+
     mostrarAds();
 
     form.addEventListener("submit", e => {
@@ -63,8 +67,9 @@ function initialize() {
         }
 
         if (!notSend) {
-            addToFirebase();
-            alert("Anuncio publicado!.")
+            subirImgFirebase()
+            
+            document.getElementById("add-check").style.display = "block";
         }
     })
 
@@ -112,45 +117,48 @@ function initialize() {
         return total
     }
 
-    function addToFirebase() {
+    function addToFirebase(Url) {
 
 
         ref_Ads.push({
             Category: sel.value,
             Comment: comment.value,
-            User_name: usuario.value
+            User_name: usuario.value,
+            Img: img.files[0].name,
+            Url: Url
+
         })
 
     }
 
-    function mostrarAds(){
-        ref_Ads.on("value", function(snap){
+    function mostrarAds() {
+        ref_Ads.on("value", function (snap) {
             var datos = snap.val();
             var divs = "";
             trade.innerHTML = divs;
             on_sale.innerHTML = divs;
 
-            for(var key in datos){
+            for (var key in datos) {
 
                 divs = ""
 
                 console.log(datos[key].Category)
 
-                divs += "<div class='container-fluid'>" + "<h2> Nombre de usuario: " + datos[key].User_name + "</h2>" + "<br>" + "<h3>" + datos[key].Comment + "</h3>" + "<br>"+ "<button class='btn btn-danger delete' data-ad='" + key + "'> <p> remove </p> </button>" + "<br><br>" + "</div>" ;
+                divs += "<div class='container-fluid'>" + "<h2> Nombre de usuario: " + datos[key].User_name + "</h2>" + "<br>" + "<img class='img-fluid' src='" + datos[key].Url + "'/>" + "<h3>" + datos[key].Comment + "</h3>" + "<br>" + "<button class='btn btn-danger delete' data-ad='" + key + "'> <p> remove </p> </button>" + "<br><br>" + "</div>";
 
-                if(datos[key].Category == "Intercambio"){
+                if (datos[key].Category == "Intercambio") {
                     trade.innerHTML += divs;
                 }
 
-                if(datos[key].Category == "Venta"){
+                if (datos[key].Category == "Venta") {
                     on_sale.innerHTML += divs;
                 }
             }
 
-            if(divs != ""){
+            if (divs != "") {
 
                 var borrar = document.getElementsByClassName("delete");
-                for(var i = 0; i < borrar.length; i++){
+                for (var i = 0; i < borrar.length; i++) {
 
                     borrar[i].addEventListener("click", borrarAds, false);
 
@@ -159,7 +167,35 @@ function initialize() {
         })
     }
 
-    function borrarAds(){
+    function subirImgFirebase() {
+        var imagenASubir = img.files[0]
+        var downloadURL = ""
+
+        var uploadTask = storageRef.child("Imágenes/" + imagenASubir.name).put(imagenASubir)
+
+        uploadTask.on('state_changed', 
+        function (snapshot) {
+
+            var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            console.log('Upload is ' + progress + '% done');
+            switch (snapshot.state) {
+                case firebase.storage.TaskState.PAUSED: // or 'paused'
+                    console.log('Upload is paused');
+                    break;
+                case firebase.storage.TaskState.RUNNING: // or 'running'
+                    console.log('Upload is running');
+                    break;
+            }
+        }, function (error) {
+
+        }, function () {
+            uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
+                addToFirebase(downloadURL)
+            });
+        });
+    }
+
+    function borrarAds() {
         var keyAdDelete = this.getAttribute("data-ad");
         var refAdD = ref_Ads.child(keyAdDelete);
 

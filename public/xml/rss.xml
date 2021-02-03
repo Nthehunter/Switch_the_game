@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<rss version="2.0">
+
+    <channel>
+        <title> Canal RSS de Switch the game </title>
+        <description> Página para venta e intercambios de videojuegos </description>
+        <link> http://index.html/ </link>
+
+        <item>
+            <title> Anuncios nuevos </title>
+            <link> http:/127.0.0.1/videogames.html</link>
+            <description> Anuncios nuevos </description>
+        </item>
+
+    </channel>
+
+</rss>
