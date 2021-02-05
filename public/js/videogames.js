@@ -17,6 +17,9 @@ function initialize() {
 
     const img = document.getElementById("img")
     var imgURL = ""
+
+    var validate = ""
+
     storageRef = firebase.storage().ref();
 
     mostrarAds();
@@ -196,10 +199,48 @@ function initialize() {
     }
 
     function borrarAds() {
-        var keyAdDelete = this.getAttribute("data-ad");
-        var refAdD = ref_Ads.child(keyAdDelete);
 
-        refAdD.remove();
+        checkIfUserIsLoggedIn()
+
+        if (validate == "true"){
+            var keyAdDelete = this.getAttribute("data-ad");
+            var refAdD = ref_Ads.child(keyAdDelete);
+    
+            refAdD.remove();
+        }
+
+        else{
+            console.log("No se borra")
+            
+        }
+        
+        
+    }
+
+    function checkIfUserIsLoggedIn() {
+
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                console.log("Hay usuario logueado")
+
+                var validate_user = user.email
+
+                console.log(user.email)
+                console.log(validate_user)
+
+
+                if (validate_user == "nthehunteryt@gmail.com") {
+    
+                    validate = "true"
+    
+                }
+            }
+            else {
+
+                console.log(user.email)
+                return 0
+            }
+        });
     }
 
 }

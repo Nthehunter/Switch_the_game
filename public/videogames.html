@@ -23,6 +23,7 @@
   <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-database.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
 
   <!-- TODO: Add SDKs for Firebase products that you want to use
       https://firebase.google.com/docs/web/setup#available-libraries -->
@@ -72,6 +73,9 @@
         <li class="nav-item">
           <a class="nav-link" href="register.html">Registrarse</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="login.html">Inicio de sesión</a>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
             Contacto
@@ -82,10 +86,10 @@
             <a class="dropdown-item" href="important_information.html">Información importante</a>
           </div>
 
-          <li class="nav-item">
-            <a  class="nav-link" href="xml/rss.xml" ><img id="rss" src="img/rss.png" alt="rss"></a>
-          </li>
-          
+        <li class="nav-item">
+          <a class="nav-link" href="xml/rss.xml"><img id="rss" src="img/rss.png" alt="rss"></a>
+        </li>
+
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
@@ -94,7 +98,6 @@
       </form>
     </div>
   </nav>
-
 
   <div class="container-fluid">
 
@@ -178,7 +181,7 @@
           <div class="col-sm-6">
             <!-- Aquí debería ir los datos de los usuarios que suban cosas para vender -->
 
-            <h1> A la venta</h1> <img id="rupia" src="img/rupia.gif"  alt="rupia">
+            <h1> A la venta</h1> <img id="rupia" src="img/rupia.gif" alt="rupia">
             <br> <br>
             <div id="on_sale">
 
@@ -187,7 +190,7 @@
 
           <div class="col-sm-6">
             <!-- Aquí debería ir los datos de los usuarios que suban cosas para intercambiar -->
-            <h1>Intercambiables</h1><img id="block" src="img/block.gif"  alt="ruipia">
+            <h1>Intercambiables</h1><img id="block" src="img/block.gif" alt="ruipia">
             <br> <br>
             <div id="trade">
 
@@ -242,8 +245,10 @@
               <button type="submit">Enviar</button>
               <br>
             </form>
-            <br> <br> 
-            <div id="add-check"> <h3> Se ha subido el anuncio!.</h3>  </div>
+            <br> <br>
+            <div id="add-check">
+              <h3> Se ha subido el anuncio!.</h3>
+            </div>
           </div>
           <div class="col-sm-3"> </div>
         </div>
